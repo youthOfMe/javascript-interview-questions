@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 作用域
+        var i = 1
+        function test() {
+            var j = 2
+        }
+
+        /* var关键字 */
+
+        // 1. 没有块级作用域概念 有全局作用域 函数作用域概念
+        {
+            // 块作用域 只在大括号里面进行生效
+            let k = 1
+            var k1 = 1 // 在外面也其作用域
+        }
+
+        // 2. 不赋值默认为undfined
+        var a;
+        console.log(a) // undefined
+
+        // 3. 存在变量提升
+        console.log(b) // 存在变量提升的现象 将变量声明部分提升到当前作用域的最顶端
+        var b = 10
+        // 上面的代码就等价于:
+        var b
+        console.log(b)
+        b = 10
+
+        // 4. 全局作用域用var声明的变量会挂在到window对象下 但是let const 不会
+        var b1 = 10
+        console.log(window.b1) // 10
+        let b2 = 20
+        console.log(window.b2) // undefined
+
+        // 5. 重复声明
+        var b3 = 10
+        var b3 = 20
+        console.log(b3)
+        // let重复声明会报错
+        // let b4 = 10
+        // let b4 = 50
+
+        /*
+            let 关键字
+        */
+
+        // 1. 有块级作用域的概念
+
+        // 2. let声明的变量不存在变量(声明)提升
+        console.log(c1)
+        let c1 = 50 // 已经被定义了 但是由于没有初始化不能直接访问
+
+        // 3. 暂时性死区
+        /*
+            在对变量的值声明之前都是不能对变量进行使用的 也就是暂时性死区
+        */
+
+        // 4. 不允许重声明
+
+        /*
+            const关键字
+        */
+
+        // 1. 必须立即初始化 不能留到以后进行赋值
+        // 2. 常量不能变化
+        // 3. 其他和let差不多
+    </script>
+</body>
+
+</html>
