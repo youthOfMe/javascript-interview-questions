@@ -8,4 +8,4 @@ function test() {
     i = 10 // 没有声明的变量会成为一个全局变量
 }
 test()
-console.log(i) // 10
+console.log(i) // 107
